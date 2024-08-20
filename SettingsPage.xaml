@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:CountDown.ViewModel"
+             x:Class="CountDown.SettingsPage"
+             Title="SettingsPage"
+             BackgroundColor="DarkTurquoise"
+             x:DataType="viewmodel:SettingsViewPage">
+    
+    <VerticalStackLayout
+        BackgroundColor="DarkTurquoise">
+        
+        <Label 
+            Text="Settings"
+            FontSize="45"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="{Binding score_time_str}"
+            FontSize="30"
+            TextColor="DarkGreen"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="0,50,0,0"
+            />
+        
+        <Label 
+            Text="Timer : "
+            FontSize="45"
+            TextColor="Black"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" 
+            Margin="110,110,0,0"
+            />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button
+                 x:Name="timeBtn1"
+                Text="20 sec"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                HeightRequest="40"
+                BackgroundColor="Blue"
+                Clicked="TwentySecClicked"
+                HorizontalOptions="Start" 
+                
+                Grid.Column="1"
+            />
+            <Button
+                x:Name="timeBtn2"
+                Text="30 sec"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                HeightRequest="40"
+                BackgroundColor="Blue"
+                Clicked="ThirtySecClicked"
+                HorizontalOptions="Center" 
+                
+                Grid.Column="2"
+            />
+            <Button
+                x:Name="timeBtn3"
+                Text="40 sec"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                HeightRequest="40"
+                BackgroundColor="Blue"
+                Clicked="FortySecClicked"
+                HorizontalOptions="End" 
+                
+                Grid.Column="3"
+            />
+        </Grid>
+
+        <Label 
+            Text="Rounds : "
+            FontSize="45"
+            TextColor="Black"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" 
+            Margin="110,110,0,0"
+            />
+
+        <Picker x:Name="numberPicker"
+                Title="Select a number"
+                TitleColor="Black"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" 
+                BackgroundColor="blue"
+                />
+
+    </VerticalStackLayout>
+</ContentPage>

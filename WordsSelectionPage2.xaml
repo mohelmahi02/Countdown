@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:CountDown.ViewModel"
+             x:Class="CountDown.WordsSelectionPage2"
+             Title="Words Selection For Player2"
+             BackgroundColor="Turquoise"
+             x:DataType="viewmodel:WordsSelection2ViewModel">
+
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30"
+        VerticalOptions="Center"
+        BackgroundColor="Turquoise">
+
+        <Label 
+            Text="{Binding roundNumber}"
+            HorizontalTextAlignment="Start"
+            TextColor="blue"
+            FontSize="Large" />
+
+        <!--<Label 
+            Text="{Binding Player1}"
+            HorizontalTextAlignment="Center"
+            HeightRequest="45"
+            TextColor="Magenta"
+            FontSize="Large" />-->
+
+        <Label 
+            Text="{Binding player2msg}"
+            HorizontalTextAlignment="Center"
+            HeightRequest="80"
+            TextColor="Yellow"
+            FontSize="Large" />
+
+        <!-- Grid for boxes -->
+        <Grid x:Name="boxGrid" ColumnSpacing="10" RowSpacing="10">
+            <!-- Define 9 columns -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <!-- Buttons -->
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                Text="Vowels"
+                Clicked="OnVowelsClicked"
+                HorizontalOptions="Center" 
+                BackgroundColor="blue"
+                TextColor="white"/>
+
+            <Button
+                Text="Consonants"
+                Clicked="OnConsonantsClicked"
+                HorizontalOptions="Center"
+                Margin="20,0,0,0" 
+                BackgroundColor="blue"
+                TextColor="white"
+               />
+        </HorizontalStackLayout>
+
+        <Label 
+            Text="** Please select at least 3 Vowels and 4 Consonants **"
+            HorizontalTextAlignment="Center"
+            Padding="20"
+            
+            TextColor="red"
+            FontSize="Small"     />
+        
+        <Label 
+            Text="{Binding NoOfVowelsSelected}"
+            HorizontalTextAlignment="Center"
+            Padding="20"
+            
+            TextColor="black"
+            FontSize="Small"     />
+        <Label 
+            Text="{Binding NoOfConsonantsSelected}"
+            HorizontalTextAlignment="Center"
+            Padding="20"
+            
+            TextColor="black"
+            FontSize="Small" />
+
+    </VerticalStackLayout>
+</ContentPage>

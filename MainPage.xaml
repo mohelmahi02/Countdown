@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountDown.MainPage"
+             BackgroundColor="Turquoise">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            BackgroundColor="Turquoise">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+            <Button
+                x:Name="settingsBtn"
+                Text="Settings"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                
+                BackgroundColor="Blue"
+                SemanticProperties.Hint="enters the name of both players"
+                Clicked="OnSettingsClicked"
+                HorizontalOptions="End" 
+                Grid.Column="1"/>
+
+            <Button
+                x:Name="historyBtn"
+                Text="Game History"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                
+                BackgroundColor="Blue"
+                SemanticProperties.Hint="enters the name of both players"
+                Clicked="OnGameHistoryClicked"
+                HorizontalOptions="Start" 
+                Grid.Column="0"
+                
+                    />
+            </Grid>
+            <Image
+                Source="countdownlogo.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Count Down"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                TextColor="Blue"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Please Enter your names and wait for your turn."
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                TextColor="Purple"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Player 1"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="18"/>
+
+            <Entry
+                x:Name="player1Entry"
+                Placeholder="1st Player Name..."
+                PlaceholderColor="AntiqueWhite"
+                WidthRequest="200"
+                BackgroundColor="DarkCyan"
+                TextColor="White"/>
+
+            <Label
+                Text="Player 2"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="18"/>
+
+            <Entry
+                x:Name="player2Entry"
+                Placeholder="2nd Player Name..."
+                PlaceholderColor="AntiqueWhite"
+                WidthRequest="200"
+                BackgroundColor="DarkCyan"
+                TextColor="White"
+                />
+
+            <Button
+                x:Name="enterBtn"
+                Text="Start Game"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="17"
+                HeightRequest="55"
+                BackgroundColor="Blue"
+                SemanticProperties.Hint="enters the name of both players"
+                Clicked="OnEnterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

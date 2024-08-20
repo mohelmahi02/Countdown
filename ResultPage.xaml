@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:CountDown.ViewModel"
+             x:Class="CountDown.ResultPage"
+             Title="Player Scores"
+             x:DataType="viewmodel:ResultViewModel" >
+
+    <Grid>
+         
+        <Image Source="result_bg.png"
+               Aspect="AspectFill"
+               Opacity="0.5"
+               Grid.RowSpan="2" />
+ 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="{Binding player1Score}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="48"
+                   FontAttributes="Bold"
+                   TextColor="orange"
+                   Grid.Column="0"
+                   Margin="10" />
+
+            <Label Text="{Binding player2Score}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="48"
+                   FontAttributes="Bold"
+                   TextColor="Orange"
+                   Grid.Column="1"
+                   Margin="10" />
+
+        </Grid>
+        
+            <Button
+                x:Name="continueBtn"
+                Text="Continue"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                BackgroundColor="AliceBlue"
+                SemanticProperties.Hint="continue the game"
+                Clicked="nextRound"
+                HorizontalOptions="Center"
+                TextColor="Black"   
+                Margin="0, 620, 0, 80"
+                BorderWidth= "5"
+                BorderColor="Turquoise"
+                />
+            
+    </Grid>
+</ContentPage>

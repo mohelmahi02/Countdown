@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CountDown.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CountDown"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="WordsSelection For Player1"
+        ContentTemplate="{DataTemplate local:WordsSelectionPage}" />
+    <ShellContent
+        Title="WordsSelection For Player2"
+        ContentTemplate="{DataTemplate local:WordsSelectionPage2}" />
+    <ShellContent
+        Title="Make a Word"
+        ContentTemplate="{DataTemplate local:TimerPlayer1}" />
+
+
+
+</Shell>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountDown.GameHistory"
+             Title="Game History"
+             BackgroundColor="Aquamarine">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Text="Game History"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="40"
+            FontAttributes="Bold"
+            Grid.Row="0"/>
+
+        <ListView ItemsSource="{Binding GameHistories}" HasUnevenRows="true"
+                  VerticalOptions="FillAndExpand"
+                  Grid.Row="1"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="30,10,10,10">
+                            <Label Text="{Binding Timestamp}" Padding="10,0,0,0" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Player1}" Padding="10,0,0,0" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text=":" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Player1Score}" Padding="10,0,0,0" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Player2}" Padding="10,0,0,0" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text=":" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Player2Score}" Padding="10,0,0,0" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
